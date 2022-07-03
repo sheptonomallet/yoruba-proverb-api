@@ -14,21 +14,32 @@
 
 
 from rest_framework import permissions
-from rest_framework.generics import  ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (
+    ListAPIView,
+    CreateAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
+    DestroyAPIView,
+)
 from .models import Proverb
 from .serializers import ProverbSerializer
 
 
 class ProverbListAPI(ListAPIView):
-    queryset = Proverb.objects.order_by('yoruba')[:5]
+    queryset = Proverb.objects.order_by("yoruba")[:5]
     serializer_class = ProverbSerializer
+
+
 class ProverbDetailAPI(RetrieveAPIView):
     queryset = Proverb
     serializer_class = ProverbSerializer
+
+
 class ProverbCreateAPI(CreateAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = Proverb
     serializer_class = ProverbSerializer
+
 
 class ProverbUpdateAPI(UpdateAPIView):
     permission_classes = (permissions.IsAdminUser,)
@@ -40,4 +51,3 @@ class ProverbDeleteAPI(DestroyAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = Proverb
     serializer_class = ProverbSerializer
-

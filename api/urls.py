@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views 
+from . import views
 
-app_name="proverb"
+app_name = "proverb"
 
 urlpatterns = [
     path("create/", views.ProverbCreateAPI.as_view(), name="api_create"),
@@ -9,11 +9,6 @@ urlpatterns = [
     path("delete/<int:pk>", views.ProverbDeleteAPI.as_view(), name="api_delete"),
     path("", views.ProverbListAPI.as_view(), name="api_list"),
 ]
-
-
-
-
-
 
 
 # from rest_framework.routers import DefaultRouter

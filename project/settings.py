@@ -15,6 +15,7 @@ from pathlib import Path
 
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api",
     "rest_framework",
-    
 ]
 
 MIDDLEWARE = [
